@@ -1,0 +1,39 @@
+{
+  "short_name": "Deliver Aaha",
+  "name": "Deliver Aaha Pizza",
+  "homepage": "https://ramjivan.github.io/delivary_aaha_pwa/",
+  "description": "Aaha Pizza Food Delivery App",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "Login",
+      "short_name": "login",
+      "description": "Login to the app",
+      "url": "/login?source=pwa",
+      "icons": [{ "src": "/logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "List",
+      "short_name": "Delivery List",
+      "description": "List of orders to be deliverd",
+      "url": "/?source=pwa",
+      "icons": [{ "src": "/logo192.png", "sizes": "192x192" }]
+    }
+  ]
+}
