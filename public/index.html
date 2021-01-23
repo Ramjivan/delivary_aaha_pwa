@@ -32,7 +32,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
 
@@ -53,20 +53,20 @@
       messaging
         .requestPermission()
         .then(function () {
-          MsgElem.innerHTML = "Notification permission granted.";
+          // MsgElem.innerHTML = "Notification permission granted.";
           console.log("Notification permission granted.");
 
           // get the token in the form of promise
           return messaging.getToken();
         })
         .then(function (token) {
-          TokenElem.innerHTML = "token is : " + token;
+          // TokenElem.innerHTML = "token is : " + token;
           localStorage.setItem("device_token", token);
         })
         .catch(function (err) {
-          ErrElem.innerHTML = ErrElem.innerHTML + "; " + err;
+          // ErrElem.innerHTML = ErrElem.innerHTML + "; " + err;
           console.log("Unable to get permission to notify.", err);
         });
-    </script>
+    </script> -->
   </body>
 </html>

@@ -1,6 +1,5 @@
 {
   "name": "delivary_person_aaha_pwa",
-  "homepage": "https://ramjivan.github.io/delivary_aaha_pwa/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +10,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "clsx": "^1.1.1",
+    "firebase": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
