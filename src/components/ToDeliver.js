@@ -104,7 +104,5 @@ export default function ToDeliver() {
                 </Card >
             </div>
         )))
-
-
     )
 }
