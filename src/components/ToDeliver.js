@@ -66,8 +66,6 @@ export default function ToDeliver() {
         }
 
     }
-
-    console.log(list)
     return (
         (list.map(item => (
             <div>

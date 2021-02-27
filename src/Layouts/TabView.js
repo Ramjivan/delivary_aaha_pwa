@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +9,10 @@ import Box from '@material-ui/core/Box';
 import ToDeliver from '../components/ToDeliver'
 import Delivered from "../components/Delivered";
 import { useHistory } from 'react-router-dom'
+import { requestFirebaseNotificationPermission } from '../firebaseMessaging'
+import config from '../config.json'
+
+const apiBaseUrl = config.apiBaseUrl
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -18,6 +22,26 @@ function TabPanel(props) {
         //redirect to login 
         history.push('login')
     }
+    //request notification permission
+    useEffect(() => {
+        requestFirebaseNotificationPermission()
+            .then((firebaseToken) => {
+                localStorage.setItem("device_token", firebaseToken);
+                if (localStorage.getItem('authToken')) {
+                    const apiAuth = 'Bearer ' + localStorage.getItem('authToken');
+                    fetch(apiBaseUrl + 'valet/update-token?device_token=' + firebaseToken, {
+                        method: 'post',
+                        headers: new Headers({
+                            'Authorization': apiAuth,
+                        }),
+                    }).then((response) => console.log(response));
+                }
+                console.log(firebaseToken);
+            })
+            .catch((err) => {
+                return err;
+            });
+    }, []);
     return (
         <div
             role="tabpanel"
